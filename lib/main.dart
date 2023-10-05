@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task8/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +49,7 @@ class _MyBodyState extends State<MyBody> {
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String? userName;
-  String? password;
+  String? password; 
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +130,7 @@ class _MyBodyState extends State<MyBody> {
                       password = _passwordController.text;
                       print(
                           "Your UserName is $userName and your password is $password");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen(userName: userName,password: password,),));
                     });
                   },
                   textColor: Colors.blue,
